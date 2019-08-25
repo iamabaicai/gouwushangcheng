@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:secyrity="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!--    1.白名单-->
+    <security:http pattern="/index.jsp" security="none"/>
+    <security:http pattern="/failer.jsp" security="none"/>
+
+    <!--    2.拦截规则-->
+    <security:http auto-config="true" use-expressions="true">
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+        <security:form-login
+            authentication-failure-url="/failer.jsp"
+        />
+    </security:http>
+
+    <!--    3.认证管理器-->
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+<!--                配置用户和角色，security5明文密码需要加前缀{noop}，4不用加-->
+                <security:user name="root" password="root" authorities="ROLE_ROOT"/>
+                <security:user name="user" password="user" authorities="ROLE_USER"/>
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans>
