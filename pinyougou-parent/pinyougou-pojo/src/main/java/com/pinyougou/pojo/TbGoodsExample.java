@@ -1,10 +1,11 @@
 package com.pinyougou.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TbGoodsExample {
+public class TbGoodsExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

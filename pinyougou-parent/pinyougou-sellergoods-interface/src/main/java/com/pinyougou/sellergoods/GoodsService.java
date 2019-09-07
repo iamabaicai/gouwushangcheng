@@ -2,13 +2,16 @@ package com.pinyougou.sellergoods;
 import java.util.List;
 import com.pinyougou.pojo.TbGoods;
 
+import com.pinyougou.pojo.TbItem;
+import entity.Goods;
+
 import entity.PageResult;
 /**
  * 服务层接口
  * @author Administrator
  *
  */
-public interface GoodsService {
+public interface 	GoodsService {
 
 	/**
 	 * 返回全部列表
@@ -27,21 +30,22 @@ public interface GoodsService {
 	/**
 	 * 增加
 	*/
-	public void add(TbGoods goods);
+	public void add(Goods goods);
 	
 	
 	/**
 	 * 修改
 	 */
-	public void update(TbGoods goods);
+	public void update(Goods goods);
 	
 
 	/**
 	 * 根据ID获取实体
 	 * @param id
 	 * @return
+	 * 商品修改数据回显，Goods是组合实体类
 	 */
-	public TbGoods findOne(Long id);
+	public Goods findOne(Long id);
 	
 	
 	/**
@@ -57,5 +61,20 @@ public interface GoodsService {
 	 * @return
 	 */
 	public PageResult findPage(TbGoods goods, int pageNum, int pageSize);
-	
+
+	/**
+	 * 运营商管理后台商品审核
+	 * @param ids
+	 * @param status
+	 */
+	public void updateStatus(Long[] ids,String status);
+
+	/**
+	 * 根据商品ID和状态查询Item表信息
+	 * @param goodsId
+	 * @param status
+	 * @return
+	 */
+	public List<TbItem> findItemListByGoodsIdandStatus(Long[] goodsIds, String status );
+
 }

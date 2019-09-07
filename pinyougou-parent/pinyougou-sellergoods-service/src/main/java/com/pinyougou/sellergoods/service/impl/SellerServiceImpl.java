@@ -1,9 +1,10 @@
 package com.pinyougou.sellergoods.service.impl;
+import java.util.Date;
 import java.util.List;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.pinyougou.sellergoods.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.pinyougou.mapper.TbSellerMapper;
@@ -48,6 +49,8 @@ public class SellerServiceImpl implements SellerService {
 	 */
 	@Override
 	public void add(TbSeller seller) {
+		seller.setStatus("0");//商家申请之后默认状态为“0”
+		seller.setCreateTime(new Date());//商家申请入驻时间
 		sellerMapper.insert(seller);		
 	}
 
@@ -160,6 +163,16 @@ public class SellerServiceImpl implements SellerService {
 		
 		Page<TbSeller> page= (Page<TbSeller>)sellerMapper.selectByExample(example);		
 		return new PageResult(page.getTotal(), page.getResult());
+	}
+
+	@Override
+	public void updateStatus(String sellerId, String status) {
+
+		//先查找入驻商家信息
+		TbSeller tbSeller = sellerMapper.selectByPrimaryKey(sellerId);
+		tbSeller.setStatus(status);
+		//修改状态，0/未审核 1/审核通过 2/审核未通过 3/关闭商家
+		sellerMapper.updateByPrimaryKey(tbSeller);
 	}
 	
 }

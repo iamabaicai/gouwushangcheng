@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET / HTTP/1.1" 304 - http-bio-9103-exec-1 65
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /js/controller/contentController.js HTTP/1.1" 304 - http-bio-9103-exec-2 8
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand02.png HTTP/1.1" 200 2766 http-bio-9103-exec-4 11
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /%7B%7Bcontent.pic%7D%7D HTTP/1.1" 404 997 http-bio-9103-exec-3 20
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand03.png HTTP/1.1" 200 1909 http-bio-9103-exec-5 14
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand04.png HTTP/1.1" 200 3206 http-bio-9103-exec-6 9
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand_03.png HTTP/1.1" 200 3134 http-bio-9103-exec-8 7
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand05.png HTTP/1.1" 200 3151 http-bio-9103-exec-10 3
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand_09.png HTTP/1.1" 200 2408 http-bio-9103-exec-3 2
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand_07.png HTTP/1.1" 200 4067 http-bio-9103-exec-4 2
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/brand_05.png HTTP/1.1" 200 2032 http-bio-9103-exec-2 15
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /%7B%7Bcontent.pic%7D%7D HTTP/1.1" 404 997 http-bio-9103-exec-9 1
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/Logo.png HTTP/1.1" 200 3752 http-bio-9103-exec-9 2
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/icons.png HTTP/1.1" 200 16384 http-bio-9103-exec-9 2
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:00 +0800] "GET /img/cartPanelViewIcons.png HTTP/1.1" 200 5508 http-bio-9103-exec-4 2
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:03 +0800] "GET /content/findContentByContentCategoryId.do?categoryId=1 HTTP/1.1" 200 724 http-bio-9103-exec-7 2880
+0:0:0:0:0:0:0:1 - - [07/Sep/2019:16:21:03 +0800] "GET /%7B%7Bcontent.pic%7D%7D HTTP/1.1" 404 997 http-bio-9103-exec-7 1

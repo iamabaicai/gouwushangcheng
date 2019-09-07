@@ -1,5 +1,6 @@
 package com.pinyougou.manager.controller;
 import java.util.List;
+import java.util.Map;
 
 import com.pinyougou.sellergoods.TypeTemplateService;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -110,6 +111,15 @@ public class TypeTemplateController {
 	@RequestMapping("/search")
 	public PageResult search(@RequestBody TbTypeTemplate typeTemplate, int page, int rows  ){
 		return typeTemplateService.findPage(typeTemplate, page, rows);		
+	}
+
+	/**
+	 * 只要typeTemplate表的id和name(text)两列作为下拉框备选项
+	 * @return
+	 */
+	@RequestMapping("/selectTypeList")
+	public List<Map> selectTypeTemplateList(){
+		return typeTemplateService.selectTypeTemplateList();
 	}
 	
 }

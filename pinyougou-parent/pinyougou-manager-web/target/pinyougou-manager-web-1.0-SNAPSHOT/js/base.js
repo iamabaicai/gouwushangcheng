@@ -1,0 +1,1 @@
+var app=angular.module('pinyougou',[]);//抽取自定义模块
